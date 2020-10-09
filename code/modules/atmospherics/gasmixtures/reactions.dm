@@ -181,7 +181,7 @@ nobiliumsuppression = INFINITY
 		cached_gases[/datum/gas/water_vapor][MOLES] += burned_fuel / TRITIUM_BURN_OXY_FACTOR
 
 		cached_results["fire"] += burned_fuel
-		WRITE_LOG(GLOB.test_fire_log,"tritfire, [SSair.times_fired], [burned_fuel], [cached_results["fire"]]")
+		WRITE_LOG(GLOB.test_fire_log,"tritfire, [SSair.times_fired], [burned_fuel], [cached_results["fire"]], [air.temperature]")
 
 	if(energy_released > 0)
 		var/new_heat_capacity = air.heat_capacity()
@@ -260,7 +260,7 @@ nobiliumsuppression = INFINITY
 
 			cached_results["fire"] += (plasma_burn_rate) * (1 + oxygen_burn_rate)
 
-			WRITE_LOG(GLOB.test_fire_log,"plasmafire, [SSair.times_fired], [plasma_burn_rate], [cached_results["fire"]]")
+			WRITE_LOG(GLOB.test_fire_log,"plasmafire, [SSair.times_fired], [plasma_burn_rate], [cached_results["fire"]], [air.temperature]")
 
 	if(energy_released > 0)
 		var/new_heat_capacity = air.heat_capacity()
@@ -373,7 +373,7 @@ nobiliumsuppression = INFINITY
 
 		cached_results["fire"] += burned_fuel
 
-		WRITE_LOG(GLOB.test_fire_log,"h2fire, [SSair.times_fired], [burned_fuel], [cached_results["fire"]]")
+		WRITE_LOG(GLOB.test_fire_log,"h2fire, [SSair.times_fired], [burned_fuel], [cached_results["fire"]], [air.temperature]")
 
 	if(energy_released > 0)
 		var/new_heat_capacity = air.heat_capacity()

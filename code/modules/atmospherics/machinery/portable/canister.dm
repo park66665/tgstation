@@ -253,6 +253,45 @@
 	air_contents.gases[/datum/gas/tritium][MOLES] = 350
 	air_contents.temperature = 10000
 
+/obj/machinery/portable_atmospherics/canister/plasmafire_test
+	name = "plasmafire test canister"
+	desc = "Don't be a badmin."
+	heat_limit = 1e12
+	pressure_limit = 1e14
+	mode = CANISTER_TIER_3
+
+/obj/machinery/portable_atmospherics/canister/plasmafire_test/create_gas()
+	air_contents.add_gases(/datum/gas/plasma, /datum/gas/oxygen)
+	air_contents.gases[/datum/gas/plasma][MOLES] = 10000
+	air_contents.gases[/datum/gas/oxygen][MOLES] = 10000
+	air_contents.temperature = 200
+
+/obj/machinery/portable_atmospherics/canister/tritiumfire_test
+	name = "tritfire test canister"
+	desc = "Don't be a badmin."
+	heat_limit = 1e12
+	pressure_limit = 1e14
+	mode = CANISTER_TIER_3
+
+/obj/machinery/portable_atmospherics/canister/tritiumfire_test/create_gas()
+	air_contents.add_gases(/datum/gas/tritium, /datum/gas/oxygen)
+	air_contents.gases[/datum/gas/tritium][MOLES] = 10000
+	air_contents.gases[/datum/gas/oxygen][MOLES] = 10000
+	air_contents.temperature = 200
+
+/obj/machinery/portable_atmospherics/canister/h2fire_test
+	name = "h2fire test canister"
+	desc = "Don't be a badmin."
+	heat_limit = 1e12
+	pressure_limit = 1e14
+	mode = CANISTER_TIER_3
+
+/obj/machinery/portable_atmospherics/canister/h2fire_test/create_gas()
+	air_contents.add_gases(/datum/gas/oxygen, /datum/gas/hydrogen)
+	air_contents.gases[/datum/gas/oxygen][MOLES] = 10000
+	air_contents.gases[/datum/gas/hydrogen][MOLES] = 10000
+	air_contents.temperature = 200
+
 /obj/machinery/portable_atmospherics/canister/proc/get_time_left()
 	if(timing)
 		. = round(max(0, valve_timer - world.time) / 10, 1)

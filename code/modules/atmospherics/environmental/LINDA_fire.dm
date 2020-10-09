@@ -80,6 +80,7 @@
 
 	location.active_hotspot = src
 
+	/*
 	bypassing = !just_spawned && (volume > CELL_VOLUME*0.95)
 
 	if(bypassing)
@@ -93,6 +94,7 @@
 			temperature = affected.temperature
 			volume = affected.reaction_results["fire"]*FIRE_GROWTH_RATE
 			location.assume_air(affected)
+	*/
 
 	for(var/A in location)
 		var/atom/AT = A
